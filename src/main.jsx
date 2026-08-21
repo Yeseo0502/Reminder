@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  Bell, CalendarDays, ChevronLeft, ChevronRight, Clock3, Crown,
-  Home, HousePlus, Menu, Megaphone, Settings, ShieldCheck,
-  ShoppingBasket, UserRound, UsersRound, Utensils, X
-} from 'lucide-react';
+import App from './App.jsx';
 import './styles.css';
 
+/*
 const meals = ['김치볶음밥', '미역국', '계란말이', '배추김치'];
 const timetable = [
   ['1교시', '국어'], ['2교시', '수학'], ['3교시', '영어'],
@@ -52,7 +49,7 @@ function SectionCard({ title, date, children, footer, className = '' }) {
   </section>;
 }
 
-function App() {
+function LegacyApp() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   return <div className="app-shell">
     <Sidebar open={menuOpen} onClose={() => setMenuOpen(false)} />
@@ -100,5 +97,6 @@ function App() {
     </main>
   </div>;
 }
+*/
 
 ReactDOM.createRoot(document.getElementById('root')).render(<React.StrictMode><App /></React.StrictMode>);
