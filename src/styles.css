@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+
+:root { font-family: 'Noto Sans KR', sans-serif; color: #313039; background: #f5f5f8; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, a { font: inherit; }
+button { color: inherit; }
+.app-shell { display: grid; grid-template-columns: 232px 1fr; gap: 20px; min-height: 100vh; padding: 20px; max-width: 1500px; margin: auto; }
+.sidebar, main { background: #fff; border-radius: 13px; }
+.sidebar { padding: 22px 18px; display: flex; flex-direction: column; min-height: calc(100vh - 40px); }
+.brand { display: flex; align-items: center; gap: 14px; padding: 0 7px 25px; font-size: 23px; }
+.brand-icon { display: grid; place-items: center; width: 44px; height: 44px; color: #fff; background: #7563dc; border-radius: 10px; }
+nav { display: grid; gap: 7px; }
+nav a { display: flex; align-items: center; gap: 12px; color: #3e3c48; text-decoration: none; padding: 11px 13px; border-radius: 10px; font-size: 14px; }
+nav a svg { color: #725ee0; stroke-width: 2.2; }
+nav a.active { background: #f0edff; font-weight: 600; }
+.role-card { margin-top: auto; border: 1px solid #ececf2; border-radius: 10px; padding: 13px; box-shadow: 0 2px 10px #29265a08; }
+.role-card h3 { font-size: 13px; margin: 0 0 12px; font-weight: 500; }
+.role-card > div { display: flex; align-items: center; gap: 10px; margin: 11px 0; }
+.role-card p { margin: 0; line-height: 1.35; }
+.role-card b, .role-card small { display: block; font-size: 11px; font-weight: 500; }
+.role-card small { color: #66636e; font-size: 10px; }.teacher { color: #f2ac3a; }.president { color: #4ca952; }
+main { min-width: 0; padding: 0 20px 20px; }
+.topbar { height: 78px; display: flex; align-items: center; justify-content: space-between; padding: 0 5px; border-bottom: 1px solid #f2f1f6; }
+.topbar h1 { font-size: 18px; margin: 0; font-weight: 600; }
+.profile { border: 0; background: #f0edff; color: #a89cea; border-radius: 50%; width: 40px; height: 40px; display: grid; place-items: center; cursor: pointer; }
+.menu-btn { display: none; border: 0; background: transparent; cursor: pointer; }
+.dashboard { display: grid; grid-template-columns: minmax(0, 1fr) 215px; gap: 14px; padding-top: 24px; }
+.primary { min-width: 0; display: grid; gap: 18px; }
+.summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.card { position: relative; border: 1px solid #e9e9ef; border-radius: 11px; background: #fff; overflow: hidden; box-shadow: 0 2px 9px #39365f08; }
+.card > header { display: flex; align-items: center; justify-content: space-between; padding: 17px 16px 8px; }
+.card h2 { font-size: 13px; font-weight: 600; margin: 0; }
+.card header time { color: #9b8df0; font-size: 10px; }
+.summary-grid .card { min-height: 350px; display: flex; flex-direction: column; }
+.card-body { padding: 8px 17px 16px; flex: 1; }
+.meal-list { list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 2.35; }
+.meal-list li::before { content: '•'; margin-right: 8px; }
+.timetable { display: grid; grid-template-columns: 55px 1fr; font-size: 10px; max-width: 140px; margin: 2px auto; border: 1px solid #eeeeF4; border-radius: 3px; overflow: hidden; }
+.timetable span, .timetable b { padding: 5px 9px; border-bottom: 1px solid #eeeeF4; font-weight: 400; }
+.timetable span { border-right: 1px solid #eeeeF4; text-align: center; }
+.timetable :nth-last-child(-n + 2) { border-bottom: 0; }
+.schedule-item { margin: 2px 0; font-size: 11px; line-height: 1.7; }
+.card-footer { margin: auto 7px 8px; min-height: 45px; display: flex; align-items: center; justify-content: center; gap: 8px; color: #b3a9ef; background: #f3f0ff; border-radius: 10px; font-size: 12px; }
+.calendar-card { min-height: 310px; padding-bottom: 44px; }
+.more { border: 0; background: none; color: #77737e; font-size: 10px; padding: 0; cursor: pointer; }
+.week-row { display: grid; grid-template-columns: 20px repeat(7, 1fr) 20px; align-items: end; margin: 7px 20px 10px; text-align: center; font-size: 10px; }
+.week-row > div { display: grid; gap: 8px; justify-items: center; }
+.week-row b { display: grid; place-items: center; width: 28px; height: 28px; font-weight: 400; }
+.week-row .selected { background: #f0edff; border-radius: 50%; color: #6958cf; }
+.calendar-event { min-height: 120px; margin: 0 50px; padding: 16px; border: 1px solid #f0eff4; border-radius: 8px; font-size: 10px; }
+.add-button { position: absolute; right: 12px; bottom: 9px; border: 0; border-radius: 4px; background: #f0edff; color: #574e77; padding: 7px 12px; font-size: 11px; cursor: pointer; }
+.right-column { display: grid; grid-template-rows: 1fr .45fr; gap: 14px; min-width: 0; }
+.notice-card, .supply-card { min-height: 0; }
+.floating { position: absolute; top: 18px; right: 15px; }
+.notice-list { list-style: none; padding: 0; margin: 0; font-size: 10px; }
+.notice-list li { display: flex; justify-content: space-between; gap: 5px; padding: 6px 0; }
+.notice-list time { color: #73717b; white-space: nowrap; }
+.supply-card .card-body { display: flex; flex-direction: column; }
+.supply-card p { margin: 0; font-size: 11px; }
+.basket { margin: auto; color: #b5abef; stroke-width: 1.7; }
+.scrim { display: none; }
+
+@media (max-width: 1000px) {
+  .app-shell { grid-template-columns: 200px 1fr; gap: 14px; padding: 14px; }
+  .sidebar { min-height: calc(100vh - 28px); }
+  .dashboard { grid-template-columns: 1fr; }
+  .right-column { grid-template-columns: 1fr 1fr; grid-template-rows: 220px; }
+  .summary-grid .card { min-height: 315px; }
+}
+@media (max-width: 760px) {
+  .app-shell { display: block; padding: 0; }
+  main { border-radius: 0; min-height: 100vh; padding: 0 14px 20px; }
+  .menu-btn { display: grid; place-items: center; }
+  .sidebar { position: fixed; z-index: 20; inset: 0 auto 0 0; width: 255px; min-height: 100vh; border-radius: 0; transform: translateX(-105%); transition: transform .25s ease; }
+  .sidebar.open { transform: translateX(0); }
+  .scrim { display: block; position: fixed; z-index: 10; inset: 0; border: 0; background: #1f1b3d66; }
+  .topbar { height: 68px; }.topbar h1 { font-size: 16px; }
+  .dashboard { padding-top: 16px; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .summary-grid .card { min-height: 270px; }
+  .right-column { grid-template-columns: 1fr; grid-template-rows: minmax(220px, auto) minmax(200px, auto); }
+  .calendar-event { margin: 0 12px; }
+  .week-row { margin-inline: 8px; }
+}
