@@ -33,3 +33,6 @@ Desktop.ini
 # Vite cache
 .vite/
 
+# Local SQLite data
+data/
+
