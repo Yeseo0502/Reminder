@@ -13,7 +13,7 @@
     {
       "binding": "DB",
       "database_name": "reminder-db",
-      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "database_id": "f628524f-89e4-4017-9eb3-7caaf4c0bb86",
       "migrations_dir": "migrations"
     }
   ]
