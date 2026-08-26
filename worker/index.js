@@ -46,7 +46,7 @@ async function api(request,env){
   if(path==='/api/me'&&method==='GET'){const user=await first(env,"SELECT u.id,u.name,u.email,u.profile_image profileImage,cm.role FROM users u LEFT JOIN class_members cm ON cm.user_id=u.id AND cm.status='accepted' WHERE u.id=? ORDER BY cm.joined_at DESC LIMIT 1",userId);return json(user)}
   if(path==='/api/me/profile'&&method==='PATCH'){const data=await parseBody(request);if(!data.name?.trim())return json({error:'이름을 입력해 주세요.'},400);await run(env,'UPDATE users SET name=? WHERE id=?',data.name.trim(),userId);return json({ok:true})}
   if(path==='/api/me/password'&&method==='PATCH'){const data=await parseBody(request),user=await first(env,'SELECT * FROM users WHERE id=?',userId);if(!user||!await verifyPassword(data.currentPassword,user.password_hash))return json({error:'현재 비밀번호가 올바르지 않습니다.'},400);if(data.newPassword?.length<8||data.newPassword!==data.confirm)return json({error:'새 비밀번호를 확인해 주세요.'},400);await run(env,'UPDATE users SET password_hash=? WHERE id=?',await hashPassword(data.newPassword),userId);return json({ok:true})}
-  return json({error:'API를 찾을 수 없습니다.'},404);
+  return json({error:'API를 찾을 수 없습니다!.'},404);
 }
 
 export default {async fetch(request,env){try{if(new URL(request.url).pathname.startsWith('/api/'))return await api(request,env);return env.ASSETS.fetch(request)}catch(error){console.error(error);return json({error:'서버 오류가 발생했습니다.'},500)}}};
