@@ -1,0 +1,2 @@
+SESSION_SECRET=로컬_개발용_충분히_긴_무작위_문자열
+NEIS_API_KEY=나이스_API_인증키
