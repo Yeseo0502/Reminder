@@ -13,6 +13,7 @@
 > 프론트 : React
 > 백엔드 : Node.js
 > DB : SQLite
+> API : 나이스api
 > ```
 > 
 
