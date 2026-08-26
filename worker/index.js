@@ -49,4 +49,19 @@ async function api(request,env){
   return json({error:'API를 찾을 수 없습니다!.'},404);
 }
 
-export default {async fetch(request,env){try{if(new URL(request.url).pathname.startsWith('/api/'))return await api(request,env);return env.ASSETS.fetch(request)}catch(error){console.error(error);return json({error:'서버 오류가 발생했습니다.'},500)}}};
+export default {
+  async fetch(request, env) {
+    console.log("SESSION_SECRET exists:", Boolean(env.SESSION_SECRET));
+
+    try {
+      if (new URL(request.url).pathname.startsWith('/api/')) {
+        return await api(request, env);
+      }
+
+      return env.ASSETS.fetch(request);
+    } catch (error) {
+      console.error(error);
+      return json({ error: '서버 오류가 발생했습니다.' }, 500);
+    }
+  }
+};
